@@ -1,0 +1,33 @@
+<div class="alert-container">
+    <div *ngIf="value.invalid && (value.dirty || value.touched)" class="alert">
+        <span *ngFor="let type of validators">
+            <span [ngSwitch]="type">
+                <span *ngSwitchCase="'required'">
+                    <small class="form-text" *ngIf="value.errors.required" translate>
+                        {{ label }}_required
+                    </small>
+                </span>
+                <span *ngSwitchCase="'minlength'">
+                    <small class="form-text" *ngIf="value.errors.minlength" translate>
+                        {{ label }}_invalid_length
+                    </small>
+                </span>
+                <span *ngSwitchCase="'email'">
+                    <small class="form-text" *ngIf="value.errors.email" translate>
+                        {{ label }}_invalid_format
+                    </small>
+                </span>
+                <span *ngSwitchCase="'pattern'">
+                    <small class="form-text" *ngIf="value.errors.pattern" translate>
+                        {{ label }}_invalid_format
+                    </small>
+                </span>
+                <span *ngSwitchCase="'forbiddenName'">
+                    <small class="form-text" *ngIf="value.errors.forbiddenName" translate>
+                        {{ label }}
+                    </small>
+                </span>
+            </span>
+        </span>
+    </div>
+</div>
