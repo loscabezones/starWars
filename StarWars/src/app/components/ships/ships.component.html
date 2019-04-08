@@ -2,9 +2,9 @@
 <app-cards [items]="ships"></app-cards>
 
 <div class="row row-button-custom"  (click)="ShowShips()">
-    <div class="col">
-        <!-- <button *ngIf="gnomes.length < maxGnomes" type="button" class="btn btn-outline-primary btn-lg btn-block">
+    <div class="col customShowData">
+        <button *ngIf="ships.length < maxShips" type="button" class="btn btn-outline-primary btn-lg btn-block">
             Más datos
-        </button> -->
+        </button>
     </div>
 </div>

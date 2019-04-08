@@ -9,6 +9,10 @@ import { ShipsService } from 'src/app/services/ships.service';
 export class ShipsComponent implements OnInit {
 
   ships = [];
+  allships = [];
+  maxShips: number;
+  sumShips: number;
+  numberOfShips: number = 3;
 
   constructor(private shipsService: ShipsService) { }
 
@@ -26,16 +30,26 @@ export class ShipsComponent implements OnInit {
           id: id
         };
 
-        this.ships.push(info);
+        this.allships.push(info);
+        this.maxShips = this.allships.length;
 
       });
-      console.log(this.ships);
+      console.log(this.allships);
+      console.log(this.maxShips);
 
+      //show onli 3 elements of ships
+        this.sumShips = 3;
+        this.ships = this.allships.slice(0, this.numberOfShips);
+
+    },
+    (error) => {
+      console.log(error)
     });
   }
 
   ShowShips() {
-
+    this.sumShips += 3;
+    this.ships = this.allships.slice(0, this.sumShips);
   }
 
 }
