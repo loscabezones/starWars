@@ -34,8 +34,6 @@ export class LoginComponent implements OnInit {
   onSubmitForm() {
 
     this.cheking = true;
-    console.log(this.loginForm.value);
-    console.log(this.loginService.users);
 
     setTimeout(() => {
       if (this.loginService.login(this.loginForm.value)) {
@@ -53,7 +51,6 @@ export class LoginComponent implements OnInit {
   register() {
 
     this.cheking = true;
-    console.log("registro");
 
     setTimeout(() => {
       if (this.loginService.contolDuplucate(this.loginForm.value)) {

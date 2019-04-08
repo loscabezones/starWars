@@ -8,11 +8,16 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
 import { ShipsComponent } from './components/ships/ships.component';
 import { FormErrorsComponent } from './components/form-errors/form-errors.component';
+import { HeaderComponent } from './components/header/header.component';
+import { CardsComponent } from './components/cards/cards.component';
 
 // router
 import { RouterModule } from '@angular/router';
 import { RoutingModule } from './app.routes';
-import { HeaderComponent } from './components/header/header.component';
+
+// service
+import { LoginService } from './services/login.service';
+import { LoginGuardService } from './services/login-guard.service';
 
 @NgModule({
   declarations: [
@@ -20,7 +25,8 @@ import { HeaderComponent } from './components/header/header.component';
     LoginComponent,
     ShipsComponent,
     FormErrorsComponent,
-    HeaderComponent
+    HeaderComponent,
+    CardsComponent
   ],
   imports: [
     FormsModule,
@@ -30,7 +36,10 @@ import { HeaderComponent } from './components/header/header.component';
     RoutingModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+    LoginService,
+    LoginGuardService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

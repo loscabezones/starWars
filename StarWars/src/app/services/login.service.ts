@@ -10,7 +10,7 @@ export class LoginService {
   alertmessage: string;
   isAlertFail: boolean;
   isAlertSuccess: boolean;
-  loginSuccessful: boolean;
+  loginSuccessful: boolean = false;
 
   constructor() {
 
