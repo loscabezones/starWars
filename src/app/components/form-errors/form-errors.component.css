@@ -1,0 +1,13 @@
+.alert {
+    color: darkred;
+    padding: 0;
+    margin-bottom: 0;
+}
+.alert div {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.alert-container {
+    height: 24px;
+}

@@ -1,0 +1,35 @@
+.login-section{
+  top: 50px;
+  margin: 0 auto;
+  bottom: 10px;
+}
+
+.message-error, .message-success{
+  width: 100%;
+  text-align: center;
+  margin: auto;
+  left: 20%;
+  padding: 0.75rem 1.25rem;
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+}
+
+.message-success{
+  background-color: #dff0d8;
+  border-color: #d0e9c6;
+  color: #3c763d;
+}
+
+.message-error{
+  background-color: #f2dede;
+  border-color: #ebcccc;
+  color: #a94442;
+}
+
+.cheking{
+  margin-left: 15px;
+}
+
+.btn-custom{
+  margin-right: 20px;
+}

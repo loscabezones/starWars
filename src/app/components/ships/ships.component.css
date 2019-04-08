@@ -1,0 +1,30 @@
+a {
+  cursor: pointer;
+}
+
+.ship .panel-body img {
+  max-width: 100%;
+  object-fit: cover;
+}
+
+.container {
+  width: 100%;
+}
+
+.customShowData{
+  max-width: 1000px;
+  margin: 3rem auto !important;
+}
+
+@media (min-width: 992px) and (max-width: 1200px){
+  .panel-heading {
+      min-height: 72px;
+      height: 58px;
+  }
+}
+
+@media (min-width: 992px){
+  .container {
+      width: 750px;
+  }
+}

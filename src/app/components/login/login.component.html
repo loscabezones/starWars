@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="col-md-4 col-md-offset-4 login-section">
+    <h2>Login</h2>
+    <form name="form" [formGroup]="loginForm" (ngSubmit)="onSubmitForm()">
+      <div>
+        <label for="username">Username</label>
+        <input type="text" name="username" class="form-control" formControlName="username" required />
+        <app-form-errors [value]="username" label="username" [validators]="['required']"></app-form-errors>
+      </div>
+      <div>
+        <label for="password">Password</label>
+        <input type="password" name="password" class="form-control" formControlName="password" required />
+        <app-form-errors [value]="password" label="password" [validators]="['required']"></app-form-errors>
+      </div>
+      <br>
+      <div class="form-actions">
+        <button type="submit" class="btn btn-primary btn-custom" [disabled]="loginForm.invalid">Login</button>
+        <button type="button" class="btn btn-secondary" (click)="register()" [disabled]="loginForm.invalid"> Register</button>
+        <span class="cheking">
+          <img *ngIf="cheking" ng-if="vm.dataLoading"
+            src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
+        </span>
+      </div>
+      <br>
+      <div class="message-success" *ngIf="loginService.isAlertSuccess">
+        {{ loginService.alertmessage }}
+      </div>
+      <div class="message-error" *ngIf="loginService.isAlertFail">
+        {{ loginService.alertmessage }}
+      </div>
+    </form>
+  </div>
+</div>
