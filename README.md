@@ -6,7 +6,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## example
+## example Descktop
 
 Login
   
@@ -15,3 +15,13 @@ Login
 Ships
   
   ![Ships](/src/assets/example_Ships.PNG "Ships")
+  
+## example Movile
+
+Login
+  
+  ![Login](/src/assets/example_login_movile.PNG "Home")
+
+Ships
+  
+  ![Ships](/src/assets/example_ships_movile.PNG "Ships")
