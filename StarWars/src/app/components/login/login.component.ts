@@ -60,6 +60,7 @@ export class LoginComponent implements OnInit {
         this.loginService.users.push(this.loginForm.value);
         this.cheking = false;
         this.loginService.verificationMessage('Usuario registrado');
+        this.loginService.saveStorage(this.loginService.users);
       }
     }, 2000);
 

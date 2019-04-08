@@ -14,8 +14,7 @@ export class LoginService {
 
   constructor() {
 
-    const user1 = { username: '1234', password: '1234' }
-    this.users.push(user1);
+    this.loadStorage();
 
   }
 
@@ -50,7 +49,17 @@ export class LoginService {
       return (item['username'] === user['username']);
     });
 
-   return !(index === -1);
+    return !(index === -1);
+  }
+
+  saveStorage(data: any) {
+    localStorage.setItem('user', JSON.stringify(data));
+  }
+
+  loadStorage() {
+    if(localStorage.getItem('user')){
+      this.users = JSON.parse(localStorage.getItem('user'));
+    }
   }
 
 }

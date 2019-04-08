@@ -34,8 +34,6 @@ export class ShipsComponent implements OnInit {
         this.maxShips = this.allships.length;
 
       });
-      console.log(this.allships);
-      console.log(this.maxShips);
 
       //show onli 3 elements of ships
         this.sumShips = 3;
